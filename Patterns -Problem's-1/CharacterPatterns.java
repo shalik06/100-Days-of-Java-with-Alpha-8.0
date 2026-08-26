@@ -1,6 +1,6 @@
 public class CharacterPatterns {
     public static void main(String[] args) {
-        int n = 7;
+        int n = 4;
         char ch = 'A';
 
         for(int line = 1; line <= n; line++){
