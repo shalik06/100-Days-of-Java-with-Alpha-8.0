@@ -1,23 +1,26 @@
 public class SelectionSort {
-    public static void main(String[] args) {
-        int arr[] ={2,5,7,8,9,12,25,35};
-        int n =8;
-
-        for(int i =0; i<n-1; i++){
-        int max =i;
-        for(int j = i+1; j<n; j++){
-            if (arr[j]> arr[max]) {
-            max = j;
+    public static void selectionSort(int arr[]){
+        for(int i=0; i<arr.length-1;i++){
+            int minpos = i;
+            for(int j = i+1; j<arr.length;j++){
+                if (arr[minpos] > arr[j]) {
+                    minpos =j;
+                }
+            }
+            int temp = arr[minpos];
+            arr[minpos] = arr[i];
+            arr[i] = temp;
         }
     }
-        int temp = arr[i];
-        arr[i]= arr[max];
-        arr[max] = temp;    
+     public static void dispaly(int arr[]){
+        for(int i=0; i<arr.length;i++){
+            System.out.print(arr[i] +" ");
+        }
+        System.out.println();
     }
-    for(int i=0; i<n; i++){
-        System.out.print(arr[i] + " ");
+    public static void main(String[] args) {
+        int arr[]={3, 6, 2, 1,8, 7, 4, 5, 3, 1};
+        selectionSort(arr);
+        dispaly(arr);
     }
-    System.out.println();
-    
 }
-    }

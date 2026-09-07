@@ -1,20 +1,25 @@
 public class BubbleSort{
-    public static void main(String[] args) {
-        int arr[] = {1, 3, 5, 7, 9,12,14,20};
-        int n = 8;
-        for(int i = 0; i<n-1; i++){
-            for(int j =0; j<n-1-i; j++){
-                if (arr[j] < arr[j+1]) {
+    public static void bubllesort(int arr[]){
+        for(int turn =0; turn<arr.length-1; turn++){
+            for(int j=0; j<arr.length-1-turn;j++){
+                if (arr[j]> arr[j+1]) {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
             }
         }
-        for(int i = 0; i<n; i++){
-            System.out.print(arr[i] + " ");
+    }
+    public static void dispaly(int arr[]){
+        for(int i=0; i<arr.length;i++){
+            System.out.print(arr[i] +" ");
         }
         System.out.println();
-
+    }
+    
+    public static void main(String[] args) {
+        int arr[]={3, 6, 2, 1,8, 7, 4, 5, 3, 1};
+        bubllesort(arr);
+        dispaly(arr);
     }
 }

@@ -1,21 +1,24 @@
 public class InsertionSort {
-    public static void main(String[] args) {
-        int arr[] ={2, 4, 7, 8, 9, 12, 14, 16, 20, 26};
-        int n = 10;
-        for(int i =1; i<n;i++){
-            int j = i-1;
-            int key = arr[i];
-            while (j>=0 && arr[j]< key) {
-                arr[j+1] = arr[j];
-                j--;
+    public static void insertionSorts(int arr[]){
+        for(int i= 1; i<arr.length; i++){
+            int curr = arr[i];
+            int prev = i-1;
+            while (prev >= 0 && arr[prev]> curr) {
+                arr[prev+1] = arr[prev];
+                prev--;
             }
-            arr[j+1] = key;
-
+            arr[prev+1]= curr;
         }
-        for(int i= 0; i<n; i++){
-            System.out.print(arr[i] + " ");
+    }
+     public static void dispaly(int arr[]){
+        for(int i=0; i<arr.length;i++){
+            System.out.print(arr[i] +" ");
         }
         System.out.println();
     }
-    
+    public static void main(String[] args) {
+        int arr[]={3, 6, 2, 1,8, 7, 4, 5, 3, 1};
+        insertionSorts(arr);
+        dispaly(arr);
+    }
 }
